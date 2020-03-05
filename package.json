@@ -1,0 +1,41 @@
+{
+  "name": "code-ancestry-mapper",
+  "version": "1.0.0",
+  "description": "hackdays work for making tree maps to show the ancestry of public github repos",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "reap-repos": "babel-node --presets @babel/preset-env scripts/reap-repos.js",
+    "test": "mocha --require @babel/register --require @babel/polyfill"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tes/code-ancestry-mapper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tes/code-ancestry-mapper/issues"
+  },
+  "homepage": "https://github.com/tes/code-ancestry-mapper#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "mocha": "^7.1.0",
+    "nock": "^12.0.2",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.15",
+    "superagent": "^5.2.1"
+  }
+}
