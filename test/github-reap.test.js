@@ -44,12 +44,14 @@ describe('Reaping repos', () => {
               object: {
                 entries: [
                   {
-                    oid: '1e494d6ae76068964a56874feb3896cdad6afd28',
                     name: '.gitignore',
                     type: 'blob',
                   },
                   {
-                    oid: 'eb60909865b7afae4b1e8beb9df8b1a84fc2d0f2',
+                    name: 'index.js',
+                    type: 'blob',
+                  },
+                  {
                     name: 'test',
                     type: 'tree',
                   },
@@ -59,8 +61,9 @@ describe('Reaping repos', () => {
           },
         });
 
-    const files = await getFileListForRepo('tes', 'conflab');
-    expect(files).to.include('.gitignore');
-    expect(files).to.include('test');
+    const fileList = await getFileListForRepo('tes', 'conflab');
+
+    expect(fileList[0].name).to.include('index.js');
+    expect(fileList[1].name).to.include('test');
   });
 });
