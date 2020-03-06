@@ -25,8 +25,8 @@ describe('Reaping repos', () => {
         },
       });
 
-    const reposList = await listPublicReposForOrg('tes');
-    expect(reposList.organization.repositories.nodes[0].name).to.include('airbrake-mini-client');
-    expect(reposList.organization.repositories.nodes[1].name).to.include('app-house-points');
+    const repoNames = await listPublicReposForOrg('tes');
+    expect(repoNames).to.include('airbrake-mini-client');
+    expect(repoNames).to.include('app-house-points');
   });
 });
