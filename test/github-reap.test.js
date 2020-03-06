@@ -16,9 +16,11 @@ describe('Reaping repos', () => {
               nodes: [
                 {
                   name: 'airbrake-mini-client',
+                  isArchived: false,
                 },
                 {
                   name: 'app-house-points',
+                  isArchived: true,
                 },
               ],
             },
@@ -28,6 +30,6 @@ describe('Reaping repos', () => {
 
     const repoNames = await listPublicReposForOrg('tes');
     expect(repoNames).to.include('airbrake-mini-client');
-    expect(repoNames).to.include('app-house-points');
+    expect(repoNames).not.to.include('app-house-points');
   });
 });
