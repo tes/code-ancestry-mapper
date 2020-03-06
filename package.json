@@ -8,6 +8,12 @@
     "reap-repos": "babel-node --presets @babel/preset-env scripts/reap-repos.js",
     "test": "mocha --require @babel/register --require @babel/polyfill"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tes/code-ancestry-mapper.git"
@@ -29,6 +35,7 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.20.1",
+    "husky": "^4.2.3",
     "mocha": "^7.1.0",
     "nock": "^12.0.2",
     "nodemon": "^2.0.2"
